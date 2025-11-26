@@ -1,0 +1,22 @@
+/* Demo Content */
+.demo-content {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.demo-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: var(--primary-color-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.demo-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  max-width: 800px;
+}

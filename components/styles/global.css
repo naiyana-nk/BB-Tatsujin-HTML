@@ -1,0 +1,22 @@
+:root {
+  --background: #ffff;
+  --primary-color-gradient: linear-gradient(to left, #d11d23, #b91a1f);
+  --primary-color: #d11d23;
+  --primary-hover-color: #9e161b;
+  --box-shadow: rgb(209, 46, 46);
+  --text-color: black;
+  --text-color-alt: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", "Noto Sans Thai", "Noto Sans JP", sans-serif;
+  background: var(--background);
+  color: var(--text-color);
+  padding-top: 60px
+}

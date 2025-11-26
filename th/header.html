@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- * Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../components/assets/logo-notext-w.png"
+    />
+
+    <!-- * Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- * Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <!-- * CSS -->
+    <link rel="stylesheet" href="/components/styles/global.css" />
+    <link rel="stylesheet" href="/components/styles/header.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="/">
+            <img src="/components/assets/LOGO_4.png" alt="Tatsujin" />
+          </a>
+        </div>
+
+        <button class="log-icon" style="display: none">
+          <i class="bi bi-person"></i>
+        </button>
+
+        <button class="cart-btn cart-btn-mobile" style="display: none">
+          <i class="bi bi-basket3"></i>
+        </button>
+
+        <div class="mobile-menu-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav id="mainNav">
+          <a href="#product">Product</a>
+          <a href="#creation">Creation Guide</a>
+          <a href="#template">Template</a>
+          <a href="#contact">Contact Us</a>
+          <button class="cart-btn">
+            <i class="bi bi-basket3"></i>
+          </button>
+          <div class="log-regis-btn">
+            <button class="cta-button login-btn">
+              <i class="bi bi-person"></i>
+              Login
+            </button>
+            <button class="cta-button signup-btn">
+              <i class="bi bi-person"></i>
+              Sign Up
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- * Bootstrap Script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- * JS Script -->
+    <script src="/components/scripts/global.js"></script>
+  </body>
+</html>
