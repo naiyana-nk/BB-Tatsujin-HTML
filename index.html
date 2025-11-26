@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+
+    <!-- Immediate redirect to Thai version -->
+    <meta http-equiv="refresh" content="0; url=/th/index.html" />
+
+    <!-- Language alternates for SEO -->
+    <link
+      rel="alternate"
+      hreflang="th"
+      href="https://myweb.com/th/index.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://myweb.com/en/index.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ja"
+      href="https://myweb.com/jp/index.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://myweb.com/th/index.html"
+    />
+
+    <script>
+      // Instant redirect to Thai version
+      window.location.replace("/th/index.html");
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/th/index.html">Thai version</a>...</p>
+  </body>
+</html>
+
+<!-- For Redirecting to default language -->
