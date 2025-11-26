@@ -1,6 +1,6 @@
 /* Demo Content */
 .demo-content {
-  max-width: 1400px;
+  max-width: 1920px;
   margin: 4rem auto;
   padding: 0 2rem;
 }
@@ -18,5 +18,4 @@
   font-size: 1.1rem;
   line-height: 1.8;
   color: #666;
-  max-width: 800px;
 }

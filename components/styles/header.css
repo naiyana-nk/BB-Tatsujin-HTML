@@ -242,3 +242,19 @@ nav a:hover::after {
     display: block;
   }
 }
+
+@media (max-width: 450px) {
+  .logo img {
+    width: auto;
+    height: 1.1rem;
+  }
+
+  .log-icon {
+    font-size: 1.55rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .cart-btn-mobile i {
+    font-size: 1.35rem;
+  }
+}
