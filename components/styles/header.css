@@ -97,6 +97,10 @@ nav a:hover::after {
   transform: translateY(0);
 }
 
+.language-changer {
+  font-size: 2rem;
+}
+
 .log-icon {
   background: none;
   color: var(--text-color);
