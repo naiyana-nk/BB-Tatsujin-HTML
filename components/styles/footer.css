@@ -113,6 +113,20 @@ footer {
   width: 20px;
 }
 
+.contact-item a {
+  color: var(--text-color-alt);
+  text-decoration: none;
+  opacity: 0.9;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.contact-item a:hover {
+  opacity: 1;
+  transform: translateX(5px);
+  color: var(--primary-color);
+}
+
 .newsletter-form {
   display: flex;
   margin-top: 1rem;

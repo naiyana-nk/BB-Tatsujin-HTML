@@ -58,16 +58,23 @@ nav a:hover::after {
   width: 100%;
 }
 
+.nav-icon {
+  display: flex;
+}
+
+.nav-icon .log-regis-btn {
+  margin-top: .2rem;
+  margin-left: 1rem;
+}
+
 .cart-btn {
   background: none;
   color: var(--text-color);
-  margin: 0 1rem;
   text-decoration: none;
   border: none;
   cursor: pointer;
   font-size: 0.95rem;
   position: relative;
-  padding: 0.5rem 0;
 }
 
 .cart-btn i {
@@ -99,6 +106,30 @@ nav a:hover::after {
 
 .language-changer {
   font-size: 2rem;
+  margin-left: .8rem;
+  margin-top: .2rem;
+  background: none;
+  border: none;
+  position: relative;
+}
+
+.language-changer:hover {
+  color: var(--primary-color);
+}
+
+.language-changer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color-gradient);
+  transition: width 0.3s ease;
+}
+
+.language-changer:hover::after {
+  width: 100%;
 }
 
 .log-icon {
@@ -180,10 +211,14 @@ nav a:hover::after {
     margin-right: 5px;
   }
 
+  .cart-btn {
+    margin: 0;
+  }
+
   .cart-btn-mobile {
     display: flex !important;
     order: 3;
-    margin-right: 15px;
+    margin: 0 .5rem;
   }
 
   .mobile-menu-toggle {
@@ -244,6 +279,10 @@ nav a:hover::after {
     margin: 1rem 2rem;
     text-align: center;
     display: block;
+  }
+
+  .language-changer {
+    margin: 0;
   }
 }
 
