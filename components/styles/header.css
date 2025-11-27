@@ -196,7 +196,7 @@ nav a:hover::after {
 /* ! Responsive */
 @media (max-width: 1100px) {
   .header-container {
-    padding: 0.75rem 1.5rem;
+    padding: 0.37rem 1.5rem;
     position: relative;
   }
 
