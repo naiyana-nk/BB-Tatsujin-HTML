@@ -174,7 +174,7 @@ nav a:hover::after {
 
 .signup-btn:hover {
   color: var(--background);
-  background: var(--primary-color);
+  background: var(--primary-color-gradient);
 }
 
 .mobile-menu-toggle {

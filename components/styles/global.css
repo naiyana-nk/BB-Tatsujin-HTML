@@ -1,6 +1,6 @@
 :root {
   --background: #ffff;
-  --primary-color-gradient: linear-gradient(to left, #d11d23, #b91a1f);
+  --primary-color-gradient: linear-gradient(135deg, #e2272d, #d11d23);
   --primary-color: #d11d23;
   --primary-hover-color: #9e161b;
   --box-shadow: rgb(209, 46, 46);
