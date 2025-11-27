@@ -35,3 +35,106 @@ document.querySelectorAll("nav a").forEach((link) => {
   });
 });
 //! Mobile Nav Menu END
+
+// ! Calendar Script START
+let currentDate = new Date();
+let selectedDate = null;
+
+function renderCalendar() {
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+
+  // Set month and year in header
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  document.getElementById(
+    "monthYear"
+  ).textContent = `${monthNames[month]} ${year}`;
+
+  // Get first day of month and number of days
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+  // Get today's date for comparison
+  const today = new Date();
+  const isCurrentMonth =
+    today.getMonth() === month && today.getFullYear() === year;
+  const todayDate = today.getDate();
+
+  // Clear calendar
+  const calendarDays = document.getElementById("calendarDays");
+  calendarDays.innerHTML = "";
+
+  // Add previous month's days
+  for (let i = firstDay - 1; i >= 0; i--) {
+    const day = daysInPrevMonth - i;
+    const dayDiv = document.createElement("div");
+    dayDiv.className = "calendar-day other-month";
+    dayDiv.textContent = day;
+    calendarDays.appendChild(dayDiv);
+  }
+
+  // Add current month's days
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dayDiv = document.createElement("div");
+    dayDiv.className = "calendar-day";
+    dayDiv.textContent = day;
+
+    // Highlight today
+    if (isCurrentMonth && day === todayDate) {
+      dayDiv.classList.add("today");
+    }
+
+    // Add click event
+    dayDiv.addEventListener("click", function () {
+      document.querySelectorAll(".calendar-day").forEach((d) => {
+        d.classList.remove("selected");
+      });
+      if (!this.classList.contains("other-month")) {
+        this.classList.add("selected");
+        selectedDate = new Date(year, month, day);
+      }
+    });
+
+    calendarDays.appendChild(dayDiv);
+  }
+
+  // Add next month's days to fill the grid
+  const totalCells = calendarDays.children.length;
+  const remainingCells = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
+
+  for (let day = 1; day <= remainingCells; day++) {
+    const dayDiv = document.createElement("div");
+    dayDiv.className = "calendar-day other-month";
+    dayDiv.textContent = day;
+    calendarDays.appendChild(dayDiv);
+  }
+}
+
+// Navigation buttons
+document.getElementById("prevMonth").addEventListener("click", function () {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar();
+});
+
+document.getElementById("nextMonth").addEventListener("click", function () {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar();
+});
+
+// Initial render
+renderCalendar();
+// ! Calendar Script END
