@@ -251,12 +251,12 @@ ul {
 
 /* ! Calendar */
 .calendar-wrapper {
-  max-width: 1200px;
   width: 100%;
   display: flex;
   gap: 30px;
   align-items: center;
   justify-content: center;
+  margin-bottom: 60px;
 }
 
 .user-guide {
@@ -420,8 +420,9 @@ ul {
 }
 
 .calendar-day:hover:not(.other-month) {
-  background: #e9ecef;
+  background: var(--primary-color);
   transform: scale(1.05);
+  color: white;
 }
 
 .calendar-day.other-month {
@@ -443,6 +444,34 @@ ul {
   font-weight: 600;
 }
 
+.calendar-day.closed {
+  background: #ffebee;
+  color: #c62828;
+  position: relative;
+  font-weight: 600;
+}
+
+.calendar-day.closed::after {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 10px;
+}
+
+.calendar-day.closed:hover {
+  background: #ffcdd2;
+  cursor: not-allowed;
+}
+
+.calendar-day.today.closed {
+  background: linear-gradient(135deg, #e2272d, #c62828);
+  color: white;
+}
+
+.calendar-day.today.closed::after {
+  color: white;
+}
+
 @media (max-width: 1430px) {
   /* Banner Section */
   .event-banner .banner-desk {
@@ -452,7 +481,7 @@ ul {
   /* Notice Section */
   .notice-container {
     display: block;
-    margin: 0 1rem;
+    margin: 0 8rem;
     padding: 0 1rem;
   }
 
@@ -479,6 +508,10 @@ ul {
 
 @media (max-width: 768px) {
   /* Banner Section */
+  .notice-container {
+    margin: 0 2.5rem;
+  }
+
   .event-banner .banner-desk {
     display: none;
   }
@@ -536,6 +569,9 @@ ul {
 }
 
 @media (max-width: 480px) {
+  .notice-container {
+    margin: 0 2.7rem;
+  }
   /* Calendar Section */
   .calendar-container {
     padding: 20px;

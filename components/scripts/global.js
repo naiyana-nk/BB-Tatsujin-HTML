@@ -37,6 +37,31 @@ document.querySelectorAll("nav a").forEach((link) => {
 //! Mobile Nav Menu END
 
 // ! Calendar Script START
+// Define closed dates
+const closedDates = [
+  "2025-12-05",
+  "2025-12-10",
+  "2026-01-01",
+  // Add more dates in YYYY-MM-DD format
+];
+
+// Helper function to check if a date is closed
+function isClosedDate(year, month, day) {
+  // Check if it's a weekend (Saturday = 6, Sunday = 0)
+  const date = new Date(year, month, day);
+  const dayOfWeek = date.getDay();
+
+  if (dayOfWeek === 0 || dayOfWeek === 6) {
+    return true; // Closed on weekends
+  }
+
+  // Also check specific closed dates
+  const dateString = `${year}-${String(month + 1).padStart(2, "0")}-${String(
+    day
+  ).padStart(2, "0")}`;
+  return closedDates.includes(dateString);
+}
+
 let currentDate = new Date();
 let selectedDate = null;
 
@@ -93,6 +118,11 @@ function renderCalendar() {
     dayDiv.className = "calendar-day";
     dayDiv.textContent = day;
 
+    // Check if it's a closed date
+    if (isClosedDate(year, month, day)) {
+      dayDiv.classList.add("closed");
+    }
+
     // Highlight today
     if (isCurrentMonth && day === todayDate) {
       dayDiv.classList.add("today");
@@ -100,6 +130,11 @@ function renderCalendar() {
 
     // Add click event
     dayDiv.addEventListener("click", function () {
+      // Prevent selecting closed dates
+      if (this.classList.contains("closed")) {
+        return;
+      }
+
       document.querySelectorAll(".calendar-day").forEach((d) => {
         d.classList.remove("selected");
       });
