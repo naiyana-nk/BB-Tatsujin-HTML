@@ -1,0 +1,260 @@
+.guide-container {
+  max-width: 1200px;
+  margin: 150px auto;
+}
+
+/* Header Section */
+.guide-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInDown 0.8s ease;
+}
+
+.guide-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  background: var(--primary-color-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+}
+
+.guide-header p {
+  font-size: 20px;
+  color: #6c757d;
+}
+
+/* Steps Wrapper */
+.steps-wrapper {
+  display: block;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+/* Step Card */
+.step-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin: 2rem 2rem;
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease;
+  animation-fill-mode: both;
+}
+
+.step-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.step-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.step-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.step-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--primary-color-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(209, 29, 35, 0.2);
+}
+
+.step-card:hover::before {
+  transform: scaleX(1);
+}
+
+.step-icon img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.step-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color-gradient);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(209, 29, 35, 0.3);
+}
+
+.step-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.step-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.step-content p {
+  color: #6c757d;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.step-features {
+  list-style: none;
+  padding: 0;
+}
+
+.step-features li {
+  padding: 8px 0;
+  color: #495057;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.step-features li::before {
+  content: "✓";
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+/* FAQ Section */
+.faq-section {
+  animation: fadeInUp 0.8s ease 0.6s;
+  animation-fill-mode: both;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: var(--text-color);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.faq-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.faq-question h4 {
+  font-size: 18px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.faq-answer {
+  color: #6c757d;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-left: 47px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .step-icon img {
+    max-height: 250px;
+  }
+
+  .guide-header h1 {
+    font-size: 36px;
+  }
+
+  .guide-header p {
+    font-size: 18px;
+  }
+
+  .cta-section {
+    padding: 40px 25px;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .step-icon img {
+    max-height: 180px;
+  }
+}
